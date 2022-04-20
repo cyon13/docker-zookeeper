@@ -1,0 +1,47 @@
+version: "3.7"
+
+services:
+        zk1:
+                image: cyon13/zookeeper:1.0
+                container_name: zk1
+                hostname: zk1
+                #restart: on-failure
+                networks:
+                    - hadoop_eco
+                volumes:
+                   - zk1_data:/usr/local/zookeeper/data
+                   - zk1_logs:/usr/local/zookeeper/logs
+ 
+        zk2:
+                image: cyon13/zookeeper:1.0
+                container_name: zk2
+                hostname: zk2
+                #restart: on-failure
+                networks:
+                    - hadoop_eco
+                volumes:
+                   - zk2_data:/usr/local/zookeeper/data
+                   - zk2_logs:/usr/local/zookeeper/logs
+
+        zk3:
+                image: cyon13/zookeeper:1.0
+                container_name: zk3
+                hostname: zk3
+                #restart: on-failure
+                networks:
+                    - hadoop_eco
+                volumes:
+                   - zk3_data:/usr/local/zookeeper/data
+                   - zk3_logs:/usr/local/zookeeper/logs
+ 
+volumes:
+        zk1_data:
+        zk1_logs:
+        zk2_data:
+        zk2_logs:
+        zk3_data:
+        zk3_logs:
+
+networks:
+        hadoop_eco:
+                driver: bridge
