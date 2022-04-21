@@ -19,7 +19,7 @@ then
 		IPADDR=$(ssh -o  StrictHostKeyChecking=no $node "ifconfig  | grep broadcast| awk '{print \$ 2}'")
 		NAME=$(ssh -o  StrictHostKeyChecking=no $node "echo \$HOSTNAME")
 		HOST="$IPADDR		$NAME"
-		if [ -z `grep "$nodes" /etc/hosts` ]
+		if [[ -z `grep "$node" /etc/hosts` ]]
 		then
 			echo $HOST >> /etc/hosts
 			echo $HOST

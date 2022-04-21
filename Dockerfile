@@ -42,7 +42,6 @@ RUN mkdir -p /usr/local/zookeeper/data && mkdir -p /usr/local/zookeeper/logs && 
 COPY start.sh /usr/local/zookeeper/start.sh
 
 
-
 RUN mkdir /var/run/sshd
 
 

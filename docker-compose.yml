@@ -6,8 +6,8 @@ services:
                 container_name: zk1
                 hostname: zk1
                 #restart: on-failure
-                networks:
-                    - hadoop_eco
+                #networks:
+                #    - hadoop_eco
                 volumes:
                    - zk1_data:/usr/local/zookeeper/data
                    - zk1_logs:/usr/local/zookeeper/logs
@@ -17,8 +17,8 @@ services:
                 container_name: zk2
                 hostname: zk2
                 #restart: on-failure
-                networks:
-                    - hadoop_eco
+                #networks:
+                #    - hadoop_eco
                 volumes:
                    - zk2_data:/usr/local/zookeeper/data
                    - zk2_logs:/usr/local/zookeeper/logs
@@ -28,8 +28,8 @@ services:
                 container_name: zk3
                 hostname: zk3
                 #restart: on-failure
-                networks:
-                    - hadoop_eco
+                #networks:
+                #    - hadoop_eco
                 volumes:
                    - zk3_data:/usr/local/zookeeper/data
                    - zk3_logs:/usr/local/zookeeper/logs
@@ -43,5 +43,6 @@ volumes:
         zk3_logs:
 
 networks:
-        hadoop_eco:
-                driver: bridge
+        default:
+                external:
+                        name: hadoop_eco
