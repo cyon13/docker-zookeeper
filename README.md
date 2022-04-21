@@ -6,7 +6,7 @@ zookeeper 클러스터(3대로 구성)
 ## 실행
 ```sh
 # 네트워크 생성(docker-compose 파일 내의 network가 external로 설정해놨기 때문에 따로 네트워크를 생성해줘야 한다)
-docker network create hadoop-eco
+docker network create hadoop_eco
 
 # docker-compose 실행
 docker-compose up -d
